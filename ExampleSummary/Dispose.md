@@ -71,3 +71,10 @@ Disposed..
 
 - 여기서 dispose 하지 않거나 onCompleted 하지 않으면 메모리 누수가 발생!!
 
+## DisposeBag의 해제 시점은??
+- 직접 해제
+```swift
+disposeBag = nil
+```
+- class가 deinit 되면 자동으로 해제
+
