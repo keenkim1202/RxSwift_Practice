@@ -23,7 +23,6 @@ let observable3 = Observable.of([1, 2, 3]) // Observable<[Int]>
 // (from은 배열값만 받을 수 있다.)
 let observable4 = Observable.from([1, 2, 3, 4, 5]) // Observable<Observable<Int>>
 
-
 // MARK: subscribe : Observable값에 접근할 수 있다.
 observable4.subscribe { event in
   // print(event)
@@ -39,3 +38,8 @@ observable3.subscribe { event in
     print(element)
   }
 }
+
+// onNext를 활용하여 원소에 순서대로 접근할 수 있다.
+observable4.subscribe(onNext: { element in
+  print(element)
+})
