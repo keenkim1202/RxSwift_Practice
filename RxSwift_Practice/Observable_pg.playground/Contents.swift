@@ -40,6 +40,19 @@ observable3.subscribe { event in
 }
 
 // onNext를 활용하여 원소에 순서대로 접근할 수 있다.
-observable4.subscribe(onNext: { element in
+let subscription4 = observable4.subscribe(onNext: { element in
   print(element)
 })
+
+// MARK: Dispose
+/*
+ 구독을 하고 난 후에 disposing 하는 방법에 대해 알아보자.
+ 
+ 구독을 생성하면, 구독자가 리턴될 것이다.
+ 구독자는 항상 특정 시퀀스를 listening 하거나 observing 할 것이다.
+ 이 구독을 처리하지 않으면 메모리 누수가 생길 수 있다.
+ */
+subscription4.dispose() // 이렇게 해주면 됨
+
+// dispose를 제대로 처리해주지 않거나 까먹는 경우도 있음. dispose하는 다른 방법도 알아보자
+
