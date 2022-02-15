@@ -2,6 +2,29 @@
 ## Observable : 관측 가능한 객체를 의미한다.
 - Observable이 어떤 값을 방출하면 옵저버가 그 값을 확인하는 것이다.
 
+## Observable 이 전달하는 세 가지 이벤트
+ 
+ - 이벤트가 전달되는 시점은 Observer가 구독(subscribe) 시작한 시점이다.
+ - subscribe는 Observable과 Observer를 연결하는 역할 -> 두 요소를 연결해야 이벤트가 전달된다.)
+ ```swift
+ public enum Event<Element>
+  case next(Element)
+  case error(Swift.Error)
+  case completed
+ }
+ ```
+ 
+ #### onNext
+ - Observable은 새로운 항목들을 배출할 때마다 이 메소드가 호출된다.
+ 
+ #### onError
+ - Observable이 기대하는 데이터가 생성되지 않았거나 다른 이유로 오류가 발생할 경우 이 메소드가 호출된다.
+ 
+ #### onCompleted
+ - 오류가 발생하지 않고 더 이상 배출할 항목이 없는 경우에 이 메소드가 호출된다.
+ - onCompleted, onError 둘 중 하나의 이벤트로 종료되었다면 관련된 리소스가 자동으로 해지된다.
+ - Observable별로 해지하는 건 번거롭기 때문에 DisposeBag()을 사용하여 disposable을 담아두었다가 한번에 해지하는 것이다.
+
 ## just 
 : 1개의 값을 방출한다.
 - 구독해보면 1이 나오고 완료 메세지가 나온다.
