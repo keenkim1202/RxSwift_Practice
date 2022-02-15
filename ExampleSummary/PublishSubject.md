@@ -1,6 +1,4 @@
-let disposeBag = DisposeBag()
-
- ## PublishSubject
+## PublishSubject
  - 기본적으로 객체이다.
  - 구독과 이벤트 방출을 둘 다 할 수 있는 객체 이다.
  - 기본값을 줄 필요가 없다. (초기화하지 않아도 됨)
@@ -8,6 +6,7 @@ let disposeBag = DisposeBag()
  -> 구독자(subscriber)이자 옵저버(observer) 인 것!
  
 ```swift
+let disposeBag = DisposeBag()
 let subject = PublishSubject<String>() //  객체는 string 타입의 이벤트만 방출 가능
 
 subject.onNext("issue 1")
