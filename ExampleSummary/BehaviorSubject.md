@@ -6,6 +6,8 @@ let subject = BehaviorSubject(value: "inital value") // 초기값 부여하기
 ```
 
 2. subscribe가 발생하면, 발생한 시점 이전에 발생한 이벤트 중 가장 최신의 이벤트를 전달받는다.
+테스트 해보자.
+
 
 ### test1: subject를 구독하고 event를 프린트해보자.
 ```swift
