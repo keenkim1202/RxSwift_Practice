@@ -27,5 +27,5 @@ RxSwift 예제 연습 레포
 - subject는 Observable과 Observer의 역할을 동시에 수행한다.
 - 자체적으로 데이터를 생성하는 동시에 관찰자의 역할도 될 수 있기 때문이다.
 - [PublishSubject](ExampleSummary/PublishSubject.md)
-- [BehaviorSubject]()
+- [BehaviorSubject](ExampleSummary/BehaviorSubject.md)
 - [RelaySubject]()
