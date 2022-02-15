@@ -6,7 +6,7 @@
 : 1개의 값을 방출한다.
 - 구독해보면 1이 나오고 완료 메세지가 나온다.
 
-```
+```swift
 let observable = Observable.just(1)
 ```
 
@@ -19,7 +19,7 @@ let observable = Observable.just(1)
 - 2는 원소 각각을 방출한다.  1 -> 2 -> 3 -> completed
 - 3은 배열을 방충한다. [1,2,3] -> completed
 
-```
+```swift
 let observable2 = Observable.of(1, 2, 3) // Observable<Int>
 let observable3 = Observable.of([1, 2, 3]) // Observable<[Int]>
 ```
@@ -28,7 +28,7 @@ let observable3 = Observable.of([1, 2, 3]) // Observable<[Int]>
 : 각각의 원소를 옵저버블로 만든다.
 - from은 배열값만 받을 수 있다.
 
-```
+```swift
 let observable4 = Observable.from([1, 2, 3, 4, 5]) // Observable<Observable<Int>>
 ```
 
@@ -54,7 +54,7 @@ observable3.subscribe { event in
 ## onNext
 - onNext를 활용하여 원소에 순서대로 접근할 수 있다.
 
-```
+```swift
 let subscription4 = observable4.subscribe(onNext: { element in
   print(element)
 })
@@ -66,7 +66,7 @@ let subscription4 = observable4.subscribe(onNext: { element in
 - 구독자는 항상 특정 시퀀스를 listening 하거나 observing 할 것이다.
 - 이 구독을 처리하지 않으면 메모리 누수가 생길 수 있다.
 
-```
+```swift
 subscription4.dispose() // 이렇게 해주면 됨
 ```
 -> dispose를 제대로 처리해주지 않거나 까먹는 경우도 있음. dispose하는 다른 방법도 알아보자
