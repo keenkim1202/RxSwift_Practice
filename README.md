@@ -1,5 +1,6 @@
 # RxSwift_Practice
-RxSwift 예제 연습 레포
+- RxSwift를 공부하면서 내용정리하는 레포입니다.
+- 배우면서 하나씩 정리하고 틀린 부분 혹은 부족한 부분이 있다면 수정해 나갈 계획입니다.
 
 # 참조 링크
 - [RactiveX 공식문서](https://reactivex.io/documentation/ko/observable.html)
