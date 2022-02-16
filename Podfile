@@ -7,5 +7,5 @@ target 'RxSwift_Practice' do
 
   # Pods for RxSwift_Practice
 	pod 'RxSwift', '~>4.0'
-
+	pod 'RxCocoa', '~> 4.0'
 end
