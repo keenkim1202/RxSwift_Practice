@@ -26,8 +26,11 @@ class PhotosCollectionViewController: UICollectionViewController {
           self?.images.append(object)
         }
         
-        self?.images.reverse() // 가장 마지막에 선택한 이미지를 사용하기 위해서 reverse
-        // print(self?.images)
+        self?.images.reverse() // 가장 마지막에 선택한 이미지를 사용하기 위해서
+        
+        DispatchQueue.main.async {
+          self?.collectionView.reloadData()
+        }
       }
     }
   }
@@ -41,7 +44,16 @@ class PhotosCollectionViewController: UICollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = UICollectionViewCell()
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+    
+    let asset = self.images[indexPath.item]
+    let manager = PHImageManager.default()
+    manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil) { image, _ in
+      DispatchQueue.main.async {
+        cell.photoImageView.image = image
+      }
+    }
+    
     return cell
   }
 }
