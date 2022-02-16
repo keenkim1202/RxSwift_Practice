@@ -28,4 +28,5 @@ RxSwift 예제 연습 레포
 - 자체적으로 데이터를 생성하는 동시에 관찰자의 역할도 될 수 있기 때문이다.
 - [PublishSubject](ExampleSummary/PublishSubject.md)
 - [BehaviorSubject](ExampleSummary/BehaviorSubject.md)
-- [RelaySubject]()
+- [RelaySubject](ExampleSummary/ReplaySubject.md)
+- [BehavoirRelay](ExampleSummary/BehaviorRelay.md)
