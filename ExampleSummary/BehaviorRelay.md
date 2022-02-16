@@ -64,7 +64,7 @@ relay.accept(relay.value + ["item 1"])
 
 
 ## 정리하면
-```// 정리하면,,
+```swift
 let relay = BehaviorRelay(value: ["item 1"]) // 초기값을 가진 객체 생성
 var value = relay.value // 변수에 relay의 초기값을 담아둔다.
 
@@ -77,7 +77,5 @@ relay.asObservable()
   .subscribe {
     print($0)
   }
-swift
-
 
 ```
