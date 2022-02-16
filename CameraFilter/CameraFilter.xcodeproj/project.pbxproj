@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				1C18002427BCC30800F36F8D /* AppDelegate.swift */,
-				1C18003827BCC32400F36F8D /* PhotosCollectionViewController.swift */,
 				1C18002627BCC30800F36F8D /* SceneDelegate.swift */,
+				1C18003827BCC32400F36F8D /* PhotosCollectionViewController.swift */,
 				1C18002827BCC30800F36F8D /* ViewController.swift */,
 				1C18002A27BCC30800F36F8D /* Main.storyboard */,
 				1C18002D27BCC30900F36F8D /* Assets.xcassets */,
@@ -91,7 +91,6 @@
 				80FAC1BCCED83576A1E16753 /* Pods-CameraFilter.debug.xcconfig */,
 				A77AE6C2A42BF73CB2E76CA1 /* Pods-CameraFilter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
