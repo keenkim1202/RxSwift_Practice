@@ -32,6 +32,13 @@
 - [RelaySubject](ExampleSummary/ReplaySubject.md)
 - [BehavoirRelay](ExampleSummary/BehaviorRelay.md)
 
+### Questions
+- Q. Subject와 Relay의 차이는?
+- Q. Driver, Variable은 무엇인가?
+  - Variable은 왜 Deprecated 됬을까?
+- Q. RxSwift와 Combine은 어떻게 다를까?
+- Q. Hot Observable과 Cold Observable 은 무엇인가?
+
 ### Examples
 - raywenderlich - Getting Started With RxSwift
   - [프롤로그 해석](raywenderlichEx/getting_started_with_rxswift.md)
