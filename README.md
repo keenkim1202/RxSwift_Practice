@@ -45,5 +45,5 @@
 ### Examples
 - raywenderlich - Getting Started With RxSwift
   - [프롤로그 해석](raywenderlichEx/getting_started_with_rxswift.md)
-  - 예제 프로젝트
+  - [예제 실습 해석](raywenderlichEx/getting_started_with_rxswift_project.md)
 
