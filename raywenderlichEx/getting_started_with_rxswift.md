@@ -91,3 +91,12 @@
 
 좋은 ARC 시민이 되기 위해선, 어느 `Observable` 오브젝트를 설정할 때 그것을 `DisposeBag`에 추가하는 것을 기억해라.  
 `DisposeBag`이 당신을 위해 훌륭하게 치워줄 것이다.
+
+</br>
+</br>
+</br>
+
+.  
+.  
+.  
+[이어보기](https://github.com/keenkim1202/RxSwift_Practice/blob/main/raywenderlichEx/getting_started_with_rxswift_project.md)
