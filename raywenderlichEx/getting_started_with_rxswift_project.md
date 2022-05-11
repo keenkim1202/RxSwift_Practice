@@ -188,3 +188,31 @@ func setupCartObserver() {
 이 함수는 장바구니를 자동으로 업데이트 하도록 반응형 옵저버를 만들어 줍니다. 보시다시피 RxSwift는 연속된 함수들을 
 굉장히 많이 사용하는데요, 그 말인 즉슨 각각의 함수들이 이전 함수의 결과값을 사용하고 있다는 뜻이죠.
 
+이 예시에 어떻게 그런 현상이 나타나는지 봅시다:
+
+1. 장바구니의 `chocolates` 변수를 `Observable`로 만들어 줍니다.
+
+2. 만들어준 `Observable`에서 `subscribe(onNext: )`를 호출해서 `Observable`의 값이 변화하는 것을 발견하도록 합시다. `subscribe(onNext: )`은 값이 변할때 마다 실행되는 클로저를 차용하고 있습니다. 이 클로저에 들어오는 파라미터는 여러분이 만든 `Observable`의 새로운 값입니다. 이런 구독관계를 구독취소(unsubscribe)나 버리기(Dispose)할 때 까지는 계속 이런 알림(notification)을 받게 되실거예요. 이 방법을 통해 여러분이 돌려받는 것은 `Disposable`에 부합하는 `Observer`입니다. 
+
+3. 이전 단계에서 받은 `Observer`를 `disposeBag`에 넣어주세요. 이를 통해 구독중인 객체를 없애줌으로서 구독을 없앨 수 있어요. 
+
+마지막으로 명령형 함수인 `updateCartButton()`을 지워주세요. 이렇게 하시면 아마 `viewWillAppear(_:)`과 `tableView(_:didSelectRowAt)`에서 호출이 되었다보니 에러를 일으킬거예요. 
+
+이걸 고치려면, 일단 `viewWillAppear(_:)` 전체를 지워주세요. `super` 이외에는 `updateCartButton()`밖에는 호출하지 않고 있으니까요. 그러고 나서 `tableView(_:didSelectRowAt)`내의 `updateCartButton()`를 지워주세요.
+
+빌드하고 실행시켜보세요. 아래와 같은 초콜릿의 리스트가 보이실거예요. 
+
+
+어이쿠야. 장바구니 버튼에 Item이라고만 뜨네요. 그리고 초콜릿 목록을 탭해도 아무일도 일어나지 않아요. 뭐가 문제일까요?
+
+여러분은 Rx Observer를 만드는 함수를 만드셨지만, 그 함수를 전혀 호출해주고 있지 않기때문에 Observer가 응답을 하지 않는거예요. `ChocolatesOfTheWorldViewController.swift` 파일을 여시고 `viewDidLoad()` 끝에 아래의 코드를 더해주세요. 
+
+```swift
+setupCartObserver()
+```
+
+빌드하고 실행시켜보시면 아까처럼 초콜릿의 리스트가 보이실겁니다.
+
+아무 초콜릿이나 탭해보세요 -- 이제 장바구니의 아이템 갯수가 자동으로 업데아트가 되는군요!
+
+대성공! 이제 어떤 초콜릿이든 장바구니에 담을 수 있게 되었습니다. 
