@@ -164,4 +164,27 @@ ShoppingCart.sharedCart.chocolates.accept(newValue)
 웨우!! 위의 작업을 통해 애러들을 처리하고 Xcode를 행복하게 만들어줬네요.  
 이제 당신은 반응형 프로그래밍의 이점을 취하고 `chocolates`를 감시할 수 있습니다!
 
+이제 `ChocolatesOfTheWorldViewController.swift`로 돌아가서 아래의 코드를 프로퍼티 목록에 추가해주세요.
+
+```swift
+private let disposeBag = DisposeBag()
+```
+
+이 코드는 `DisposeBag`을 만들어 주는 코드입니다. 이걸 사용해서 우리가 만든 Observer들을 청소해(clean up) 줄 것입니다. 
+
+이제 `//MARK: Rx Setup`주석 아래의 extension에 추가해주세요.
+
+```swift
+func setupCartObserver() {
+  //1
+  ShoppingCart.sharedCart.chocolates.asObservable()
+    .subscribe(onNext: { //2
+      [unowned self] chocolates in
+      self.cartButton.title = "\(chocolates.count) \u{1f36b}"
+    })
+    .disposed(by: disposeBag) //3
+}
+```
+이 함수는 장바구니를 자동으로 업데이트 하도록 반응형 옵저버를 만들어 줍니다. 보시다시피 RxSwift는 연속된 함수들을 
+굉장히 많이 사용하는데요, 그 말인 즉슨 각각의 함수들이 이전 함수의 결과값을 사용하고 있다는 뜻이죠.
 
