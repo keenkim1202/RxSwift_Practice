@@ -42,6 +42,7 @@
 - [Q. Subject와 Relay의 차이는?](ExampleSummary/subject_vs_relay.md)
 - Q. Driver, Variable은 무엇인가?
   - Variable은 왜 Deprecated 됬을까?
+- Q. Driver와 Observable은 언제 누구를 사용할까?
 - Q. RxSwift와 Combine은 어떻게 다를까?
 - [Q. Hot Observable과 Cold Observable 은 무엇인가?](ExampleSummary/HotAndColdObservable.md) `Solved`
 
