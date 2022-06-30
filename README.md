@@ -47,6 +47,7 @@
 - [Q. Hot Observable과 Cold Observable 은 무엇인가?](ExampleSummary/HotAndColdObservable.md) `Solved`
 - Q. Rx에서 디버깅이 어려운 이유는 무엇일까?
 - Q. map과 flatmap 은 각각 언제 사용하며 어떻게 다를까?
+- Q. observeOn 과 subscribeOn 의 차이는 무엇일까?
 
 ## Examples
 - raywenderlich - Getting Started With RxSwift
