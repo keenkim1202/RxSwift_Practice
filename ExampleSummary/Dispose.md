@@ -78,3 +78,16 @@ disposeBag = nil
 ```
 - class가 deinit 되면 자동으로 해제
 
+## 요약
+- 옵저버블 타입을 구독하면 Disposable 이 리턴된다.
+```
+Disposable = 옵저버블 시퀀스로부터 구독취소된 구독 객체들 
+```
+- 옵저버블이 동작하고 있는 동안 dispose를 하면 취소가 된다.
+  - DisposeBag = dispose된 객체들을 담는 곳
+  - DisposeBag = thread safe 하게 disposable들을 deinit에 추가해주는 역할을 한다.
+
+- 일종의 RxSwift에서 ARC같은 리소스 매니징을 해주는 녀석이다.
+- 그저 여기에 담은 후 다른 disposeBag으로 대체하거나 비워주면 알아서 관리해준다.
+
+
